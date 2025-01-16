@@ -1,0 +1,141 @@
+@import "variables";
+
+@mixin azeret-mono {
+  font-family: "Azeret Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+
+  span {
+    font-weight: normal;
+  }
+}
+
+body {
+  @include azeret-mono;
+  background-color: $white;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.popup {
+  position: absolute;
+  z-index: 100;
+  color: $blue;
+  width: max-content; // Change from min-content to max-content
+  max-width: 145px;
+  overflow: hidden; // Hide overflow text
+  border: 1px solid $blue;
+  text-align: right;
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  &--development {
+    top: 30px;
+    right: 16px;
+    rotate: 20deg;
+  }
+  &--hover {
+    top: -30px;
+    left: -50px;
+    rotate: -20deg;
+    background-color: $white;
+    transition: opacity 0.3s;
+    padding: 6px 12px;
+  }
+}
+
+.logo {
+  grid-column: 5/9;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 2.75rem;
+}
+.wrapper {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: subgrid;
+  section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    padding-right: 2rem;
+    transition: opacity 0.3s, filter 0.3s;
+  }
+
+  &:has(section:hover) {
+    section:not(:hover) {
+      opacity: 0.5;
+      filter: blur(5px);
+    }
+  }
+}
+
+.content {
+  p:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+}
+.about-me {
+  position: relative;
+  grid-column: 2/5;
+}
+.experience {
+  grid-column: 5/9;
+}
+.contact {
+  grid-column: 9/-2;
+  padding-right: 0;
+  width: 120%;
+  &__links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    a {
+      color: $black;
+      text-decoration: none;
+      transition: color 0.3s;
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  table {
+    border-collapse: collapse;
+    border: none;
+    tbody {
+      display: block;
+      width: 100%;
+    }
+    td:first-child {
+      padding-right: 6px;
+    }
+    td:last-child {
+      text-align: right;
+    }
+  }
+}
