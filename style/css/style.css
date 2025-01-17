@@ -1,3 +1,30 @@
+html {
+  font-size: 16px;
+}
+@media (max-width: 800px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+p {
+  font-size: 1rem;
+  line-height: 120%;
+}
+
+h2 {
+  font-size: 2.625rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+h3 span {
+  font-weight: 400;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -48,6 +75,11 @@ body {
   transition: opacity 0.3s;
   padding: 6px 12px;
 }
+@media (max-width: 800px) {
+  .popup {
+    max-width: 120px;
+  }
+}
 
 .logo {
   grid-column: 6/10;
@@ -73,16 +105,21 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 1.5rem;
-  padding-right: 2rem;
   -webkit-transition: opacity 0.3s, -webkit-filter 0.3s;
   transition: opacity 0.3s, -webkit-filter 0.3s;
   transition: opacity 0.3s, filter 0.3s;
   transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s;
+  max-width: 650px;
 }
-.wrapper:has(section:hover) section:not(:hover) {
-  opacity: 0.5;
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
+.wrapper section:not(:last-child) {
+  padding-right: 2rem;
+}
+@media (hover: hover) {
+  .wrapper:has(section:hover) section:not(:hover) {
+    opacity: 0.5;
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
 }
 
 .content p:not(:last-child) {
@@ -119,8 +156,10 @@ body {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-.contact__links a:hover {
-  color: #3300d9;
+@media (hover: hover) {
+  .contact__links a:hover {
+    color: #3300d9;
+  }
 }
 .contact .content {
   display: -webkit-box;
@@ -149,7 +188,7 @@ body {
   padding-right: 6px;
 }
 .contact table td:last-child {
-  font-size: 14px;
+  font-size: 0.9rem;
   text-align: right;
 }
 
@@ -167,13 +206,15 @@ body {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
-  font-size: 36px;
+  font-size: 2.25rem;
 }
-.language:hover a {
-  color: #3300d9;
-}
-.language:hover svg path {
-  fill: #3300d9;
+@media (hover: hover) {
+  .language:hover a {
+    color: #3300d9;
+  }
+  .language:hover svg path {
+    fill: #3300d9;
+  }
 }
 .language a {
   text-decoration: none;
@@ -195,4 +236,112 @@ body {
 .language svg path {
   -webkit-transition: fill 0.3s;
   transition: fill 0.3s;
+}
+
+@media (max-width: 1440px) {
+  body {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 24px;
+    row-gap: 2rem;
+  }
+  .logo {
+    grid-column: 1;
+    width: 50%;
+    margin: 1rem 0;
+  }
+  .about-me {
+    grid-column: 1;
+  }
+  .experience {
+    grid-column: 2;
+  }
+  .contact {
+    grid-column: 3;
+  }
+  .language {
+    padding-right: 24px;
+    grid-column: 3;
+  }
+  .popup--hover {
+    left: unset;
+    right: -60px;
+    rotate: -20deg;
+  }
+}
+@media not all and (hover: none), (hover: none) {
+  .popup--hover {
+    display: none;
+  }
+}
+@media (hover: none) {
+  .popup--hover {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, -webkit-fit-content);
+    grid-template-rows: repeat(3, fit-content);
+    row-gap: 2rem;
+  }
+  .wrapper {
+    row-gap: 1.25rem;
+  }
+  .logo {
+    width: 200px;
+  }
+  .about-me {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .experience {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .contact {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .contact .content {
+    row-gap: 1rem;
+  }
+  .contact table tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 0.5rem;
+  }
+  .contact table td:last-child {
+    text-align: left;
+  }
+  .popup--hover {
+    left: unset;
+    right: -60px;
+    rotate: 12deg;
+    top: 10px;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+  .language {
+    padding-right: 12px;
+    grid-column: 3;
+    bottom: 6px;
+    font-size: 2rem;
+  }
+  .language a {
+    line-height: 120%;
+  }
+  .language svg {
+    width: 16px;
+    height: 16px;
+    margin-right: -8px;
+  }
 }/*# sourceMappingURL=style.css.map */

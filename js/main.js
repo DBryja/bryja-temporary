@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const exp = document.querySelector(".experience .content");
 
   const setEqualHeight = () => {
+    if (window.outerWidth < 1000) {
+      contact.style.height = "auto";
+      return;
+    }
     const expHeight = exp.offsetHeight;
     contact.style.height = expHeight + "px";
   };
