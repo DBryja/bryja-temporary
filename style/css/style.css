@@ -5,23 +5,6 @@
           box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
-}
-
-h2 {
-  font-size: 42px;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 16px;
-  font-weight: 600;
-}
-h3 span {
-  font-weight: normal;
-}
-
 body {
   font-family: "Azeret Mono", monospace;
   font-optical-sizing: auto;
@@ -29,7 +12,12 @@ body {
   font-style: normal;
   background-color: #f5f5f5;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: -webkit-min-content 1fr;
+  grid-template-rows: min-content 1fr;
+  row-gap: 2.75rem;
+  position: relative;
+  min-height: 100vh;
 }
 
 .popup {
@@ -62,10 +50,13 @@ body {
 }
 
 .logo {
-  grid-column: 5/9;
+  grid-column: 6/10;
   width: 80%;
-  margin: 0 auto;
-  margin-bottom: 2.75rem;
+  margin: 2rem 0;
+  height: auto;
+}
+.logo img {
+  width: 100%;
 }
 
 .wrapper {
@@ -100,17 +91,17 @@ body {
 
 .about-me {
   position: relative;
-  grid-column: 2/5;
+  grid-column: 2/6;
 }
 
 .experience {
-  grid-column: 5/9;
+  grid-column: 6/10;
 }
 
 .contact {
-  grid-column: 9/-2;
-  padding-right: 0;
-  width: 120%;
+  grid-column: 10/-2;
+  padding-right: 0 !important;
+  width: 100%;
 }
 .contact__links {
   display: -webkit-box;
@@ -146,14 +137,62 @@ body {
 .contact table {
   border-collapse: collapse;
   border: none;
+  width: 100%;
+}
+.contact table tr {
+  width: 100%;
 }
 .contact table tbody {
-  display: block;
   width: 100%;
 }
 .contact table td:first-child {
   padding-right: 6px;
 }
 .contact table td:last-child {
+  font-size: 14px;
   text-align: right;
+}
+
+.language {
+  position: absolute;
+  grid-column: -3/-2;
+  bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  font-size: 36px;
+}
+.language:hover a {
+  color: #3300d9;
+}
+.language:hover svg path {
+  fill: #3300d9;
+}
+.language a {
+  text-decoration: none;
+  color: #0c0c0c;
+  line-height: 42px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.language svg {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: -20px;
+}
+.language svg path {
+  -webkit-transition: fill 0.3s;
+  transition: fill 0.3s;
 }/*# sourceMappingURL=style.css.map */
