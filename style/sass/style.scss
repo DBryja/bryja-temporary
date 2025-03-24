@@ -68,6 +68,9 @@ body {
     row-gap: 1.5rem;
     transition: opacity 0.3s, filter 0.3s;
     max-width: 650px;
+    p {
+      max-width: 50ch;
+    }
     &:not(:last-child) {
       padding-right: 2rem;
     }
@@ -86,6 +89,12 @@ body {
 .content {
   p:not(:last-child) {
     margin-bottom: 1.25rem;
+  }
+}
+.project-title {
+  color: $black;
+  &:hover {
+    color: $blue;
   }
 }
 .about-me {
@@ -207,11 +216,6 @@ body {
     left: unset;
     right: -60px;
     rotate: -20deg;
-  }
-}
-@media not all and (hover: none), (hover: none) {
-  .popup--hover {
-    display: none;
   }
 }
 @media (hover: none) {

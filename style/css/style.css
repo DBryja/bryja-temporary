@@ -111,6 +111,9 @@ body {
   transition: opacity 0.3s, filter 0.3s, -webkit-filter 0.3s;
   max-width: 650px;
 }
+.wrapper section p {
+  max-width: 50ch;
+}
 .wrapper section:not(:last-child) {
   padding-right: 2rem;
 }
@@ -124,6 +127,13 @@ body {
 
 .content p:not(:last-child) {
   margin-bottom: 1.25rem;
+}
+
+.project-title {
+  color: #0c0c0c;
+}
+.project-title:hover {
+  color: #3300d9;
 }
 
 .about-me {
@@ -266,11 +276,6 @@ body {
     left: unset;
     right: -60px;
     rotate: -20deg;
-  }
-}
-@media not all and (hover: none), (hover: none) {
-  .popup--hover {
-    display: none;
   }
 }
 @media (hover: none) {
